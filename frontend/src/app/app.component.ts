@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   formData = {
     name: '',
-    email: ''
+    email: '',
+    gender: '',
   };
 
   submitForm() {
@@ -21,6 +22,7 @@ export class AppComponent {
 
       this.formData.name = '';
       this.formData.email = '';
+      this.formData.gender = '';
     } else {
       console.log('Veuillez remplir tous les champs du formulaire.');
     }
