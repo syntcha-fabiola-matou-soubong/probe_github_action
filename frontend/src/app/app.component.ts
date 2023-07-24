@@ -16,15 +16,16 @@ export class AppComponent {
 
     if (this.formData.name && this.formData.email) {
 
-      console.log('Formulaire soumis !');
-      console.log('Nom:', this.formData.name);
+      console.log('Form send !');
+      console.log('Name:', this.formData.name);
       console.log('Email:', this.formData.email);
+      console.log('Gender:', this.formData.gender);
 
       this.formData.name = '';
       this.formData.email = '';
       this.formData.gender = '';
     } else {
-      console.log('Veuillez remplir tous les champs du formulaire.');
+      console.log('Please fill in all the fields of the form.');
     }
   }
 }

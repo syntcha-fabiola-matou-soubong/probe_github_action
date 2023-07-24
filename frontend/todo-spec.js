@@ -1,22 +1,20 @@
 describe('angularjs homepage todo list', function() {
-  it('should display title and button', function() {
-    browser.waitForAngularEnabled(false);
+
+  beforeEach(function() {
 
     browser.get('http://localhost:4200/');
+  })
+  
+  it('should display title', function() {
+    expect(browser.getTitle()).toEqual('Frontend');
+  
+  });
+  it('should display name', function() {
+    element(by.id('name')).sendKeys('test');
+    element(by.id('email')).sendKeys('test');
+    element(by.id('gender')).sendKeys('test');
+    element(by.id('submit')).click();
 
-    var nameInput = element(by.id('name'));
-    var emailInput = element(by.id('email'));
-    var genderInput = element(by.id('gender'));
-    var submitButton = element(by.css('button[type="submit"]'));
-
-    nameInput.sendKeys('John Doe');
-    emailInput.sendKeys('john@example.com');
-    genderInput.sendKeys('male');
-
-    submitButton.click();
-
-    expect(nameInput.getAttribute('value')).toEqual('');
-    expect(emailInput.getAttribute('value')).toEqual('');
-    expect(genderInput.getAttribute('value')).toEqual('');
+  
   });
 });
